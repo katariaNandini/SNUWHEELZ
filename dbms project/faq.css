@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Bhaijaan+2:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400&display=swap');
+
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+.faqs {
+    background-color: #35374B;
+}
+
+.faqs h1 {
+    font-family: 'Baloo Bhaijaan 2', cursive;
+    color: #ffffff;
+    justify-content: center;
+    text-align: center;
+    padding-top: 1rem;
+}
+
+.faqs h2 {
+    font-family: 'Baloo Bhaijaan 2', cursive;
+    color: #78A083;
+    /* justify-content: center;
+    text-align: center; */
+    margin: 1rem;
+    padding: 10px;
+}
+
+.faqs p {
+    font-family: 'Ubuntu', sans-serif;
+    color: #ffffff;
+    font-weight: 300;
+
+
+}
+
+.button {
+    padding: 5px;
+    border-radius: 66px;
+    background-color: 35374B;
+    color: #50727B;
+    border: none;
+    cursor: pointer;
+}
+
+
+.info {
+    background-color: #50727B;
+    margin: 1rem;
+    padding: 10px;
+    border-radius: 15px;
+}
+
+.para {
+    display: none;
+    font-family: 'Ubuntu', sans-serif;
+
+
+}

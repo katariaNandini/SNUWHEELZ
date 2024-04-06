@@ -1,0 +1,131 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Bhaijaan+2:wght@500&display=swap');
+
+/* Reset CSS */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Body Styles */
+body {
+    font-family: 'Baloo Bhaijaan 2', cursive;
+    line-height: 1.6;
+    background-color: #f8f8f8; /* Light gray background */
+}
+
+/* Header Styles */
+.logo {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.nav {
+    text-align: center;
+}
+
+#header {
+    list-style-type: none;
+    margin-top: 20px;
+}
+
+.tag {
+    text-decoration: none;
+    color: #50727B; /* Dark blue for links */
+    padding: 10px 20px;
+}
+
+/* Main Section Styles */
+#about {
+    background-color: #fff; /* White background */
+    padding: 40px;
+    margin-top: 20px;
+}
+
+h2 {
+    color: #50727B; /* Dark blue for headings */
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+p {
+    color: #333; /* Dark gray for text */
+    margin-bottom: 20px;
+}
+
+/* Footer Styles */
+.footer {
+    background-color: #35374B; /* Dark blue background */
+    padding: 20px;
+    color: #fff; /* White text color */
+    text-align: center;
+    margin-top: 20px;
+}
+
+.last {
+    display: inline-block;
+    margin: 0 10px;
+}
+
+.center {
+    margin-top: 10px;
+}
+
+/* Links Section Styles */
+#termconition {
+    background-color: #f8f8f8; /* Light gray background */
+    padding: 40px;
+    margin-top: 20px;
+}
+
+.term {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.link {
+    flex: 1;
+    text-align: center;
+}
+
+.link h3 {
+    color: #50727B; /* Dark blue for headings */
+}
+
+.link ul {
+    list-style-type: none;
+}
+
+.linkimg {
+    width: 50px;
+    height: 50px;
+}
+
+/* Input Styles */
+.email-form {
+    margin-top: 10px;
+}
+
+#linkmail {
+    padding: 8px;
+    width: 200px;
+    border-radius: 5px;
+    border: 1px solid #ccc; /* Light gray border */
+}
+
+button[type="submit"] {
+    padding: 8px 20px;
+    background-color: #50727B; /* Dark blue background */
+    color: #fff; /* White text color */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Social Media Icons Styles */
+.footer img {
+    width: 30px;
+    height: 30px;
+    margin: 0 10px;
+}

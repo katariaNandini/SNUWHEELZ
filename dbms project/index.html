@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SNU Wheelz</title>
+    <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="/Users/abha/Desktop/dbms project/index.css">
+</head>
+
+<body>
+    <div id="preloader">
+        <div>
+        <img src="/Users/abha/Desktop/dbms project/images/cycling-bicycle.gif" width="100%" class="giphy-embed" ></img>
+    </div>
+        
+    </div>
+
+    <!-- Navigation bar -->
+    <logo class="logo">
+        <img src="/Users/abha/Desktop/dbms project/images/logo.png" alt="CODE"> 
+    </logo>
+
+    <navbar class="nav">
+        <ul id="header">
+            <li><a class="tag" href="/Users/abha/Desktop/dbms project/index.html">Home</a></li>
+            <li><a class="tag" href="/Users/abha/Desktop/dbms project/xplore.html">SNU-XPLORE</a></li>
+            <li><a class="tag" href="/Users/abha/Desktop/dbms project/aboutus.html">About Us</a></li> 
+            <li><a class="tag" href="/Users/abha/Desktop/dbms project/faq.html">FAQ's</a></li>
+            <li><a class="tag" href="/Users/abha/Desktop/dbms project/contact.html">Contact Us</a></li>
+        </ul>
+    </navbar>
+    <button id="scrolltotop"><i class='bx bx-up-arrow-alt'></i></button>
+
+    <section class="home">
+        <div id="homeinfo">
+            <div>
+                <h1 id="tagline">Rent cycle of your choice</h1>
+                <div class="bookbutton">
+                    <button id="book"><a id="booka" href="/Users/abha/Desktop/dbms project/book.html">Book Now</a></button>
+                </div>
+            </div>
+
+            <div>
+                <button id="b1" class="b">...</button>
+                <button id="b2" class="b">...</button>
+                <button id="b3" class="b">...</button>
+            </div>
+    </section>
+    <div id="heading">
+        <h1>Choose from wide range of Cycles</h1>
+    </div>
+
+    <section id="topic">
+        <div class="container">
+            <img src="/Users/abha/Desktop/dbms project/images/nongearednew.png" alt="nongeared">
+            <p>Starting at</p>
+            <p>Rs - 60 / day</p>
+            <p>Rs - 1,500 / month</p>
+            <p><button class="hoverbutton"><a href="/Users/abha/Desktop/dbms project/book.html">Book</a></button></p>
+
+        </div>
+        <div class="container">
+            <img src="/Users/abha/Desktop/dbms project/images/geared new.png" alt="geared">
+            <p>Starting at</p>
+            <p>Rs - 90 / day</p>
+            <p>Rs - 3,000 / month</p>
+            <p><button class="hoverbutton"><a href="/Users/abha/Desktop/dbms project/book.html">Book</a></button></p>
+        </div>
+        <div class="container">
+            <img src="/Users/abha/Desktop/dbms project/images/electricccc.png" alt="electric">
+            <p>Starting at</p>
+            <p>Rs - 180 / day</p>
+            <p>Rs - 4,500 / month</p>
+            <p><button class="hoverbutton"><a href="/Users/abha/Desktop/dbms project/book.html">Book</a></button></p>
+        </div>
+        <div class="container">
+            <img src="/Users/abha/Desktop/dbms project/images/twoseaternew.png" alt="premium">
+            <p>Starting at</p>
+            <p>Rs - 4000 / day</p>
+            <p>Rs - 9,000 / month</p>
+            <p><button class="hoverbutton"><a href="/Users/abha/Desktop/dbms project/book.html">Book</a></button></p>
+        </div>
+    </section>
+
+    <section id="td">
+        <h1>Customize your Duration</h1>
+        <div id="time">
+            <div class="duration">
+                <h2>Daily</h2>
+            </div>
+            <div class="duration">
+                <h2>Weekly</h2>
+            </div>
+            <div class="duration">
+                <h2>Monthly</h2>
+            </div>
+            <div class="duration">
+                <h2>Yearly</h2>
+            </div>
+        </div>
+    </section>
+
+    <section id="choose">
+        <h1>Why choose SNU Wheelz</h1>
+        <div class="chooseus">
+            <div class="features">
+                <i class='bx bxs-time'></i>
+                <p>24/7 Availibility</p>
+            </div>
+            <div class="features">
+                <i class='bx bxs-chat'></i>
+                <p>Chat support</p>
+            </div>
+            <div class="features">
+                <i class='bx bxs-wrench'></i>
+                <p>Road side Assistance</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="Feedback">
+        <h1>Feedback Form</h1>
+        <div id="feedback-box">
+            <form class="feedback-form" action="/submit_feedback" method="post">
+                <div class="form-group">
+                    <label for="user_id">User ID: </label>
+                    <input type="number" name="user_id" id="user_id" placeholder="Enter your user ID">
+                </div>
+                <div class="form-group">
+                    <label for="cycle_id">Cycle ID: </label>
+                    <input type="number" name="cycle_id" id="cycle_id" placeholder="Enter the cycle ID">
+                </div>
+                <div class="form-group">
+                    <label for="rating">Rating: </label>
+                    <input type="number" name="rating" id="rating" min="1" max="5" placeholder="Enter your rating (1-5)">
+                </div>
+                <div class="form-group">
+                    <label for="comments">Comments: </label>
+                    <textarea id="comments" name="comments" cols="30" rows="5" placeholder="Enter your comments"></textarea>
+                </div>
+                <button class="btn" type="submit">Submit Feedback</button>
+            </form>
+        </div>
+    </section>
+    
+    <section id="termconition">
+        <div class="term">
+            <div class="link">
+                <ul>
+                    <li><img id="linkimg" src="/Users/abha/Desktop/dbms project/images/logo.png" alt="logo"></li> 
+                    <li>snu.wheelz@gmail.com</li>
+                    <li>712348901</li>
+                </ul>
+
+            </div>
+            <div class="link">
+                <ul>
+                    <li>
+                        <h3>Links</h3>
+                    </li>
+                    <li>Terms & Conditions</li>
+                    <li>Privacy policy</li>
+                    <li>FAQs</li>
+                    
+                </ul>
+
+            </div>
+            <div class="link">
+                <ul>
+                    <li>
+                        <h3>Subscribe</h3>
+                    </li>
+                    <li>Get out latest news and updates</li>
+                    <li>
+                        <form class="email-form" action="/" method="POST">
+                            <input type="email" id="linkmail" placeholder="Enter your Email">
+                            <button type="submit"><i class='bx bxs-send'></i></button>
+                        </form>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="last"><a href="https://facebook.com"><img width="30px" height="30px" src="/Users/abha/Desktop/dbms project/images/facebook.jpg"
+                    alt="facebook logo"></a></div>
+        <div class="last"><a href="https://instagram.com"><img width="30px" height="30px" src="/Users/abha/Desktop/dbms project/images/instagram.jpg"
+                    alt="facebook logo"></a></div>
+        <div class="last"><a href="https://twitter.com"><img width="30px" height="30px" src="/Users/abha/Desktop/dbms project/images/twitter x logo.avif"
+                    alt="facebook logo"></a></div>
+        <div class="last" ><a href="https://github.com"><img width="30px" height="30px" src="/Users/abha/Desktop/dbms project/images/githublogo.png" 
+                    alt="github logo"></a></div>
+    </footer>
+    <footer>
+        <div class="center">
+            Copyright &copy; www.SNUWheelz.com All rights reserved!
+        </div>
+    </footer>
+
+
+
+    <script src="/Users/abha/Desktop/dbms project/app.js"></script>
+    <script src="/Users/abha/Desktop/dbms project/index.js"></script>
+
+
+
+</body>
+
+</html>
