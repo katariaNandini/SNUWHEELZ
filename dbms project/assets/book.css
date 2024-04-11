@@ -121,14 +121,39 @@ body {
   }
   /* styles.css */
 
-#booknow-form {
+/* book.css */
+
+#bookform {
   max-width: 400px;
   margin: 0 auto;
   padding: 20px;
   border: 1px solid #ccc;
   border-radius: 5px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 100%;
 }
+
+#bookform input,
+#bookform select {
+  display: block;
+  width: 90%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+
+#bookform input[type="submit"] {
+  background-color: #00994d;
+  color: white;
+  cursor: pointer;
+}
+
+#bookform input[type="submit"]:hover {
+  background-color: #00994d;
+}
+
 
 .flex {
   display: flex;
@@ -154,11 +179,11 @@ body {
 }
 
 .input-group input[type="submit"] {
-  background-color: #007bff;
+  background-color: #00994d;
   color: white;
   cursor: pointer;
 }
 
 .input-group input[type="submit"]:hover {
-  background-color: #0056b3;
+  background-color: #00994d;
 }
