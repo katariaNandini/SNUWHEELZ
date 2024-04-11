@@ -119,3 +119,46 @@ body {
   .justify-evenly {
     justify-content: space-evenly;
   }
+  /* styles.css */
+
+#booknow-form {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.flex {
+  display: flex;
+  flex-direction: column;
+}
+
+.input-group {
+  margin-bottom: 20px;
+}
+
+.input-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.input-group input,
+.input-group select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.input-group input[type="submit"] {
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+}
+
+.input-group input[type="submit"]:hover {
+  background-color: #0056b3;
+}
