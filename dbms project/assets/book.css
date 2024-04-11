@@ -124,6 +124,48 @@ body {
 /* book.css */
 
 #bookform {
+  justify-content: center;
+  align-items: center;
+  background-color: #2b2d2e;
+  padding-top: 1rem;
+  width: 100%;
+}
+
+#bookform h1 {
+  color: white;
+  text-align: center;
+}
+
+#bookform::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0.9;
+  background: url("./images/background\ \(2\).jpg") no-repeat center center/cover;
+  z-index: -1;
+}
+
+#bookform-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 34px;
+  color: aliceblue;
+}
+
+#bookform-box input,
+#bookform-box textarea {
+  width: 100%;
+  padding: 0.5rem;
+  border-radius: 9px;
+  font-size: 1rem;
+}
+
+#bookform-box form {
+  width: 30%;
+}
+#bookform {
   max-width: 400px;
   margin: 0 auto;
   padding: 20px;
@@ -187,3 +229,53 @@ body {
 .input-group input[type="submit"]:hover {
   background-color: #00994d;
 }
+
+/* ... Previous CSS ... */
+
+#booknow-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2rem;
+  background-color: #2b2d2e; /* Grey-black background color */
+  padding: 2rem; /* Padding to make the form wider */
+  border-radius: 10px; /* Rounded corners for the form */
+}
+
+#booknow-form h2 {
+  color: #00994d;
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+
+#booknow-form input,
+#booknow-form select {
+  width: 94%;
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  background-color: white; /* White background for input fields */
+}
+
+#booknow-form .btn {
+  background-color: green;
+  color: white;
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+  border-radius: 0.7rem;
+  cursor: pointer;
+  width: 100%; /* Full width button */
+}
+
+#booknow-form .btn:hover {
+  background-color: black;
+  color: white;
+}
+
+/* ... Remaining CSS ... */

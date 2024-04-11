@@ -4,7 +4,8 @@ const bodyParser = require("body-parser");
 const encoder = bodyParser.urlencoded();
 
 const app = express();
-//app.use("/assets",express.static("assets"));
+ app.use("/assets",express.static("assets"));
+// app.use("/styles", express.static("styles")); // Serve the book.css file
 
 const connection = mysql.createConnection({
     host: "localhost",
