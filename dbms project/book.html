@@ -39,10 +39,7 @@
     <button id="scrolltotop"><i class='bx bx-up-arrow-alt'></i></button>
 
         <div id="contact-form">
-          <h1 class="text-3xl font-semibold">Contact Us</h1>
-          <p class="text-xl sm:text-center">
-            Any Cycle Renting Issue? Feel Free to Contact us.
-          </p>
+         
           <div class="flex relative mt-16 h-64 w-64 lg:h-72 lg:w-72">
             <img
               id="cycle-image"
@@ -58,96 +55,63 @@
 
 
               <div id="bookform" >
-              <input
-                name="firstname"
-                id="first-name"
-                type="text"
-                placeholder="First-Name"
-                required
-                class="p-2 mb-2"
-              />
-              <input
-                name="lastname"
-                id="last-name"
-                type="text"
-                placeholder="last-Name"
-                required
-                class="p-2 mb-2"
-              />
-              <input
-                name="email"
-                id="email"
-                type="email"
-                placeholder="Email"
-                required
-                class="p-2 mb-2"
-              />
-              <input
-                name="mobileno"
-                id="mobile-no"
-                type="tel"
-                placeholder="Mobile Number"
-                required
-                class="p-2 mb-2"
-              />
-              <select
-                name="location"
-                id="selected-location"
-                required
-                class="p-2 mb-2"
-              >
-                <option value="">Select Location</option>
-                <option value="Bengaluru">Bengaluru</option>
-                <option value="Mumbai">Mumbai</option>
-                <option value="Delhi">Delhi</option>
-                <option value="Patna">Patna</option>
-              </select>
-              <select
-                name="cycle"
-                id="selected-cycle"
-                required
-                class="p-2 mb-2"
-              >
-                <option value="">Select Cycle</option>
-                <option value="Hercules">Hercules</option>
-                <option value="Avon">Avon</option>
-                <option value="BSA">BSA</option>
-                <option value="Urban Terrain">Urban Terrain</option>
-                <option value="Svitch">Svitch</option>
-                <option value="Hero">Hero</option>
-                <option value="Vector">Vector</option>
-                <input type="submit" class="btn" value="BOOK">
-              </div>
-            </div>
-
-    <section id="termconition">
-        <div class="term">
-            <div class="link">
-                <ul>
-                    <li><img id="linkimg" src=" images/logo.png" alt="logo"></li>
-                    <li>snu.wheelz@gmail.com</li>
-                    <li>712348901</li>
-                </ul>
-                
-            </div>
-            <div class="link">
-                <ul>
-                    <li><h3>Links</h3></li>
-                    <li>Terms & Conditions</li>
-                    <li>Privacy policy</li>
-                    <li>FAQs</li>
-                </ul>
-
-            </div>
-            <div class="link">
-                <ul>
-                    <li><h3>Subscribe</h3></li>
-                    <li>Get out latest news and updates</li>
-                    <li >
-                        <form class="email-form" action="/" method="POST">
-                            <input type="email" id="linkmail" placeholder="Enter your Email">
-                    <button type="submit"><i class='bx bxs-send'></i></button>
-                        </form>
+                <form action="/" method="post" novalidate>
+                  <div>
+                      <label for="select-location">Select Location</label>
+                      <select id="select-location" name="select-location">
+                          <option value="Cluster 1">Cluster 1</option>
+                          <option value="Cluster 2">Cluster 2</option>
+                          <option value="Cluster 3">Cluster 3</option>
+                          <option value="D block">D block</option>
+                          <option value="AnB">AnB</option>
+                          <option value="BnC">BnC</option>
+                      </select>
+                  </div>
+                  <div>
+                      <label for="start_datetime">Select Date and Start Time of Your Booking</label>
+                      <input type="datetime-local" id="start_datetime" name="start_datetime">
+                  </div>
+                  <div>
+                      <label for="end_datetime">Select Date and Ending Time of Your Booking</label>
+                      <input type="datetime-local" id="end_datetime" name="end_datetime">
+                  </div>
+                  <div>
+                      <label for="userID">User ID</label>
+                      <input type="text" id="userID" name="userID">
+                  </div>
+                  <div>
+                      <label for="email">Email</label>
+                      <input type="email" id="email" name="email">
+                  </div>
+                  <div>
+                      <label for="name">Name</label>
+                      <input type="text" id="name" name="name">
+                  </div>
+                  <div>
+                      <label for="department">Department</label>
+                      <input type="text" id="department" name="department">
+                  </div>
+                  <div>
+                      <label for="year">Year</label>
+                      <input type="number" id="year" name="year">
+                  </div>
+                  <div>
+                      <label for="major">Major</label>
+                      <input type="text" id="major" name="major">
+                  </div>
+                  <div>
+                      <label for="title">Title</label>
+                      <input type="text" id="title" name="title">
+                  </div>
+                  <div>
+                      <label for="position">Position</label>
+                      <input type="text" id="position" name="position">
+                  </div>
+                  <div>
+                      <button type="submit">Submit</button>
+                  </div>
+              </form>
+              
             
                     </li>
                 </ul>
