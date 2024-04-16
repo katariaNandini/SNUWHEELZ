@@ -40,18 +40,11 @@
 
         <div id="contact-form">
          
-          <div class="flex relative mt-16 h-64 w-64 lg:h-72 lg:w-72">
-            <img
-              id="cycle-image"
-              src="mainPage1.jpg"
-              alt="cycle-images"
-              class="object-cover h-64 w-64 lg:h-72 lg:w-72"
-            />
-          </div>
+          
 
           <form id="contact-form-inner" method="post" action="/" >
             <div class="flex flex-col" id="booknow-form" >
-              <h2 class="text-2xl font-semibold mb-4" style="color: #00994d; text-align: center;">Book Now</h2>
+                <h1 class="flex justify-center items-center mt-12 font-bold hover:text-amber-800 text-3xl">Book Now</h1>
 
 
               <div id="bookform" >
@@ -108,10 +101,54 @@
                       <input type="text" id="position" name="position">
                   </div>
                   <div>
-                      <button type="submit">Submit</button>
-                  </div>
+                    <a href="/rent/booknow/pay">
+                        <button>Book Your Ride</button>
+                    </a>                  </div>
               </form>
               
+            
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+    </section>
+    <div class="relative flex flex-col h-58 p-5 w-64 items-center justify-center border-1 hover:border-2 hover:shadow-md">
+        <h1 class="font-semibold text-2xl mb-4">Cycle: SNUStryder</h1>
+        <img src="/Users/abha/Desktop/dbms project/images/StreetFire26TDesertStorm.png" alt="cycle" class="object-cover rounded-md" height="324" width="324">
+        <div class="flex flex-row mt-3 text-1xl">
+            <h1 class="inline">₹ 50/hour</h1>
+         
+        </div>
+    </div>
+    <section id="termconition">
+        <div class="term">
+            <div class="link">
+                <ul>
+                    <li><img id="linkimg" src="/Users/abha/Desktop/dbms project/images/Brown & White Bicycle Shop Service Logo.png" alt="logo"></li>
+                    <li>snu.wheelz@gmail.com</li>
+                    <li>99XXXXXXXX</li>
+                </ul>
+                
+            </div>
+            <div class="link">
+                <ul>
+                    <li><h3>Links</h3></li>
+                    <li>Terms & Conditions</li>
+                    <li>Privacy policy</li>
+                    <li>FAQs</li>
+                </ul>
+
+            </div>
+            <div class="link">
+                <ul>
+                    <li><h3>Subscribe</h3></li>
+                    <li>Get our latest news and updates</li>
+                    <li >
+                        <form class="email-form" action="/" method="POST">
+                            <input type="email" id="linkmail" placeholder="Enter your Email">
+                    <button type="submit"><i class='bx bxs-send'></i></button>
+                        </form>
             
                     </li>
                 </ul>

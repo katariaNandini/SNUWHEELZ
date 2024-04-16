@@ -4,8 +4,7 @@ const bodyParser = require("body-parser");
 const encoder = bodyParser.urlencoded();
 
 const app = express();
- app.use("/assets",express.static("assets"));
-// app.use("/styles", express.static("styles")); // Serve the book.css file
+app.use("/assets", express.static("assets"));
 
 const connection = mysql.createConnection({
     host: "localhost",
@@ -14,17 +13,17 @@ const connection = mysql.createConnection({
     database: "d_p"
 });
 
-// connect to the database
 connection.connect(function(error){
-    if (error) throw error
-    else console.log("connected to the database successfully!")
+    if (error) throw error;
+    else console.log("Connected to the database successfully!");
 });
 
-
-app.get("/",function(req,res){
+// Route to serve the booking form
+app.get("/", function(req, res){
     res.sendFile(__dirname + "/book.html");
-})
+});
 
+// Route to handle booking form submission
 app.post("/", encoder, function(req, res){
     var location = req.body['select-location'];
     var start_datetime = req.body['start_datetime'];
@@ -42,25 +41,62 @@ app.post("/", encoder, function(req, res){
     const selectValues = [location, start_datetime, end_datetime, userID, email, name, department, year, major, title, position];
 
     connection.query(selectQuery, selectValues, function(error, results, fields){
-        if (results.length > 0) {
-            res.redirect("/welcome");
+        if (error) {
+            console.error("Error querying the database:", error);
+            res.status(500).send("Error processing the request");
         } else {
-            const insertQuery = "INSERT INTO bookings (location, start_datetime, end_datetime, userID, email, name, department, year, major, title, position) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
-            const insertValues = [location, start_datetime, end_datetime, userID, email, name, department, year, major, title, position];
-
-            connection.query(insertQuery, insertValues, function(error, results, fields){
-                if (error) throw error;
+            if (results.length > 0) {
                 res.redirect("/welcome");
-                res.end();
-            });
+            } else {
+                const insertQuery = "INSERT INTO bookings (location, start_datetime, end_datetime, userID, email, name, department, year, major, title, position) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+                const insertValues = [location, start_datetime, end_datetime, userID, email, name, department, year, major, title, position];
+
+                connection.query(insertQuery, insertValues, function(error, results, fields){
+                    if (error) {
+                        console.error("Error inserting data into the database:", error);
+                        res.status(500).send("Error processing the request");
+                    } else {
+                        res.redirect("/feedback");
+                    }
+                });
+            }
         }
     });
 });
 
-// when login is success
-app.get("/welcome",function(req,res){
-    res.sendFile(__dirname + "/index.html")
+// Route to serve the welcome page
+app.get("/welcome", function(req, res){
+    res.sendFile(__dirname + "/index.html");
 });
 
-// set app port
-app.listen(4000);
+// Route to serve the feedback form
+app.get("/feedback", function(req, res){
+    res.sendFile(__dirname + "/index.html");
+});
+
+// Route to handle feedback form submission
+app.post("/submit_feedback", encoder, function(req, res){
+    var user_id = req.body.user_id;
+    var cycle_id = req.body.cycle_id; // Assuming you have a form field for cycle_id
+    var rating = req.body.rating;
+    var comments = req.body.comments;
+
+    const insertFeedbackQuery = "INSERT INTO feedback (user_id, cycle_id, rating, comments) VALUES (?, ?, ?, ?)";
+    const feedbackValues = [user_id, cycle_id, rating, comments];
+
+    connection.query(insertFeedbackQuery, feedbackValues, function(error, results, fields){
+        if (error) {
+            console.error("Error inserting feedback into the database:", error);
+            res.status(500).send("Error processing the request");
+        } else {
+            console.log("Feedback submitted successfully");
+            res.redirect("/welcome");
+        }
+    });
+});
+
+
+// Set the app port
+app.listen(4000, function(){
+    console.log("Server is running on port 4000");
+});
