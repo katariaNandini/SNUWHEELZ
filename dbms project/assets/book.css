@@ -242,7 +242,12 @@ body {
   padding: 2rem; /* Padding to make the form wider */
   border-radius: 10px; /* Rounded corners for the form */
 }
-
+label {
+            color: white;
+        }
+        button {
+            color:black;
+        }
 #booknow-form h2 {
   color: #00994d;
   text-align: center;
