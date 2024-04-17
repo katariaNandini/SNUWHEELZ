@@ -74,6 +74,35 @@ app.get("/feedback", function(req, res){
     res.sendFile(__dirname + "/index.html");
 });
 
+// Route to serve the signup page
+app.get("/signup", function(req, res){
+    res.sendFile(__dirname + "/signup.html");
+});
+
+// Handle signup form submission
+app.post("/signup", encoder, function (req, res) {
+    var username = req.body.username;
+    var email = req.body.email;
+    var password = req.body.password;
+    var confirmPassword = req.body.confirmPassword;
+
+    // Check if password and confirm password match
+    if (password !== confirmPassword) {
+        res.status(400).send("Password and confirm password do not match.");
+        return;
+    }
+
+    // Insert the new user into the database
+    connection.query("INSERT INTO signupuser (user_name, user_email, user_pass) VALUES (?, ?, ?)", [username, email, password], function (error, results, fields) {
+        if (error) {
+            console.error("Error inserting new user:", error);
+            res.status(500).send("An error occurred while signing up. Please try again later.");
+            return;
+        }
+        res.redirect("/welcome");
+    });
+});
+
 // Route to handle feedback form submission
 app.post("/submit_feedback", encoder, function(req, res){
     var user_id = req.body.user_id;
@@ -94,7 +123,6 @@ app.post("/submit_feedback", encoder, function(req, res){
         }
     });
 });
-
 
 // Set the app port
 app.listen(4000, function(){

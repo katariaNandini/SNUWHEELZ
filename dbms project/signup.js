@@ -13,17 +13,17 @@ signupButton.addEventListener("click", (e) => {
         // Show an error message if passwords don't match
         signupErrorMsg.textContent = "Passwords do not match";
         signupErrorMsg.style.opacity = 1;
-    } else if (!validateEmail(email)) {
-        // Show an error message if email is not valid
-        signupErrorMsg.textContent = "Invalid email";
-        signupErrorMsg.style.opacity = 1;
     } else {
-        // If everything's fine, show a success message
-        alert("You have successfully signed up.");
-        location.reload();
+        // Reset any previous error messages
+        signupErrorMsg.textContent = "";
+        signupErrorMsg.style.opacity = 0;
+
+        // Submit the form
+        signupForm.submit();
     }
 });
 
+// Function to validate email format
 function validateEmail(email) {
     const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     return re.test(String(email).toLowerCase());
