@@ -1,22 +1,46 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <link rel="stylesheet" href="/Users/abha/Desktop/dbms project/admin_user.css">
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Select Login</title>
-</head>
-
-<body>
-  <main id="main-holder">
-    <h1>Please select your role:</h1>
-    
-    <div id="role-selection">
-      <a href="login.html">User</a>
-      <a href="adminlogin.html">Admin</a>
-    </div>
-  </main>
-</body>
-
-</html>
+body {
+    background-color: #35374B;
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    color: white;
+  }
+  
+  #main-holder {
+    text-align: center;
+  }
+  
+  #role-selection {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 2rem;
+  }
+  
+  #role-selection a {
+    display: block;
+    width: 300px;
+    height: 230px;
+    background-color: #78A083;
+    border-radius: 1rem;
+    position: relative;
+  }
+  
+  #role-selection a::before {
+    content: attr(href);
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+  }
+  
+  #role-selection a[href="login.html"]::before {
+    content: "User";
+  }
+  
+  #role-selection a[href="adminlogin.html"]::before {
+    content: "Admin";
+  }
