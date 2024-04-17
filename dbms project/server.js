@@ -5,6 +5,7 @@ const encoder = bodyParser.urlencoded();
 
 const app = express();
 app.use("/assets", express.static("assets"));
+app.use("/images", express.static("images"));
 
 const connection = mysql.createConnection({
     host: "localhost",
@@ -19,10 +20,39 @@ connection.connect(function(error){
 });
 
 // Route to serve the booking form
-app.get("/", function(req, res){
-    res.sendFile(__dirname + "/book.html");
+// Route to serve the booking form
+app.get("/aboutus.html", function(req, res){
+    res.sendFile(__dirname + "/aboutus.html");
+});
+app.get("/admin_user.html", function(req, res){
+    res.sendFile(__dirname + "/admin_user.html");
+});
+app.get("/contact.html", function(req, res){
+    res.sendFile(__dirname + "/contact.html");
 });
 
+app.get("/faq.html", function(req, res){
+    res.sendFile(__dirname + "/faq.html");
+});
+app.get("/index.html", function(req, res){
+    res.sendFile(__dirname + "/index.html");
+});
+app.get("/login.html", function(req, res){
+    res.sendFile(__dirname + "/login.html");
+});
+app.get("/signup.html", function(req, res){
+    res.sendFile(__dirname + "/signup.html");
+});
+app.get("/welcome.html", function(req, res){
+    res.sendFile(__dirname + "/welcome.html");
+});
+app.get("/xplore.html", function(req, res){
+    res.sendFile(__dirname + "/xplore.html");
+});
+
+app.get("/book.html", function(req, res){
+    res.sendFile(__dirname + "/book.html");
+});
 // Route to handle booking form submission
 app.post("/", encoder, function(req, res){
     var location = req.body['select-location'];
@@ -93,7 +123,7 @@ app.post("/signup", encoder, function (req, res) {
     }
 
     // Insert the new user into the database
-    connection.query("INSERT INTO signupuser (user_name, user_email, user_pass) VALUES (?, ?, ?)", [username, email, password], function (error, results, fields) {
+    connection.query("INSERT INTO signupuser (user_name, user_email, user_pass,user_confirmpass) VALUES (?,?,?, ?)", [username, email, password,confirmPassword], function (error, results, fields) {
         if (error) {
             console.error("Error inserting new user:", error);
             res.status(500).send("An error occurred while signing up. Please try again later.");
