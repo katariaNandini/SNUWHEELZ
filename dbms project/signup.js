@@ -11,16 +11,16 @@ document.addEventListener("DOMContentLoaded", function() {
         const password = passwordField.value;
         const confirmPassword = confirmPasswordField.value;
 
-        // Check if passwords match
-        if (password !== confirmPassword) {
-            // Show error message
-            signupErrorMsg.textContent = "Passwords do not match";
-            signupErrorMsg.style.display = "block";
-        } else {
-            // Clear error message and submit form
-            signupErrorMsg.textContent = "";
-            signupErrorMsg.style.display = "none";
-            signupForm.submit();
-        }
+        // // Check if passwords match
+        // if (password !== confirmPassword) {
+        //     // Show error message
+        //     signupErrorMsg.textContent = "Passwords do not match";
+        //     signupErrorMsg.style.display = "block";
+        // } else {
+        //     // Clear error message and submit form
+        //     signupErrorMsg.textContent = "";
+        //     signupErrorMsg.style.display = "none";
+        //     signupForm.submit();
+        // }
     });
 });

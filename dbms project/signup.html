@@ -5,10 +5,19 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Signup</title>
-  <link rel="stylesheet" href="signup.css">
+  <link rel="stylesheet" href="assets/signup.css">
   <script defer src="signup.js"></script>
 </head>
-
+<script>
+  // Check if there is an error query parameter
+  const urlParams = new URLSearchParams(window.location.search);
+  const error = urlParams.get('error');
+  
+  // If there's a password mismatch error, display an alert
+  if (error === 'passwordMismatch') {
+      alert("Password and confirm password do not match.");
+  }
+</script>
 <body>
   <main id="main-holder">
     <div id="signup-section">

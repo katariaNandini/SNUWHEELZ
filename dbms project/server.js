@@ -1,6 +1,7 @@
 const mysql = require("mysql");
 const express = require("express");
 const bodyParser = require("body-parser");
+const { emit } = require("nodemon");
 const encoder = bodyParser.urlencoded();
 
 const app = express();
@@ -110,6 +111,9 @@ app.get("/signup", function(req, res){
 });
 
 // Handle signup form submission
+// Handle signup form submission
+// Handle signup form submission
+// Handle signup form submission
 app.post("/signup", encoder, function (req, res) {
     var username = req.body.username;
     var email = req.body.email;
@@ -118,18 +122,23 @@ app.post("/signup", encoder, function (req, res) {
 
     // Check if password and confirm password match
     if (password !== confirmPassword) {
-        res.status(400).send("Password and confirm password do not match.");
+        // Redirect back to the signup page with an error query parameter
+        res.redirect("/signup?error=passwordMismatch");
         return;
     }
-
+    
     // Insert the new user into the database
-    connection.query("INSERT INTO signupuser (user_name, user_email, user_pass,user_confirmpass) VALUES (?,?,?, ?)", [username, email, password,confirmPassword], function (error, results, fields) {
+    const insertUserQuery = "INSERT INTO signupuser (username, email, password) VALUES (?, ?, ?)";
+    const userValues = [username, email, password];
+
+    connection.query(insertUserQuery, userValues, function(error, results, fields){
         if (error) {
-            console.error("Error inserting new user:", error);
-            res.status(500).send("An error occurred while signing up. Please try again later.");
-            return;
+            console.error("Error inserting user into the database:", error);
+            res.status(500).send("Error processing the request");
+        } else {
+            console.log("User signed up successfully");
+            res.redirect("/welcome");
         }
-        res.redirect("/welcome");
     });
 });
 
