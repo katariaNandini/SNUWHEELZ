@@ -6,7 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Login</title>
   <link rel="stylesheet" href="assets/adminlogin.css">
-  <script defer src="adminlogin.js"></script>
+  <!-- You don't need to defer the script here -->
+  <script src="adminlogin.js"></script>
 </head>
 
 <body>
@@ -14,11 +15,14 @@
     <div id="adminlogin-section">
       <h1 id="adminlogin-header">Admin</h1>
       
+      <!-- You can uncomment the error message section if needed -->
       <!-- <div id="login-error-msg-holder"> -->
         <!-- <p id="login-error-msg">Invalid username <span id="error-msg-second-line">and/or password</span></p> -->
       <!-- </div> -->
       
-      <form id="adminlogin-form">
+      <!-- Add an action attribute to the form to specify the route -->
+      <form id="adminlogin-form" action="/adminlogin" method="POST">
+        <!-- Add name attributes to the input fields for accessing them in the server-side logic -->
         <input type="text" name="username" id="username-field" class="login-form-field" placeholder="Username">
         <input type="password" name="password" id="password-field" class="login-form-field" placeholder="Password">
         <input type="submit" value="Login" id="login-form-submit">

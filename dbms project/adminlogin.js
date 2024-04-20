@@ -1,16 +1,13 @@
-const loginForm = document.getElementById("adminlogin-form");
-const loginButton = document.getElementById("adminlogin-form-submit");
-const loginErrorMsg = document.getElementById("adminlogin-error-msg");
-
 loginButton.addEventListener("click", (e) => {
     e.preventDefault();
     const username = loginForm.username.value;
     const password = loginForm.password.value;
 
     if (username === "user" && password === "web_dev") {
-        alert("You have successfully logged in.");
-        location.reload();
+        // Redirect to admin.html upon successful login
+        window.location.href = "admin.html";
     } else {
+        // Display error message
         loginErrorMsg.style.opacity = 1;
     }
-})
+});

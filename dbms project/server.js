@@ -19,13 +19,17 @@ connection.connect(function(error){
     else console.log("Connected to the database successfully!");
 });
 
-// Route to serve the booking form
-// Route to serve the booking form
 app.get("/aboutus.html", function(req, res){
     res.sendFile(__dirname + "/aboutus.html");
 });
 app.get("/admin_user.html", function(req, res){
     res.sendFile(__dirname + "/admin_user.html");
+});
+app.get("/admin.html", function(req, res){
+    res.sendFile(__dirname + "/admin.html");
+});
+app.get("/adminlogin.html", function(req, res){
+    res.sendFile(__dirname + "/adminlogin.html");
 });
 app.get("/contact.html", function(req, res){
     res.sendFile(__dirname + "/contact.html");
@@ -53,6 +57,26 @@ app.get("/xplore.html", function(req, res){
 app.get("/book.html", function(req, res){
     res.sendFile(__dirname + "/book.html");
 });
+// Handle admin login authentication
+// Route to handle admin login form submission
+// Handle admin login authentication
+app.post("/adminlogin", encoder, function(req, res) {
+    var username = req.body.username;
+    var password = req.body.password;
+
+    // Check if username and password are correct (this is just an example, actual implementation should involve database validation)
+    if (username === "user" && password === "web_dev") {
+        // Authentication successful, redirect to admin page
+        res.redirect("/admin.html");
+    } else {
+        // Authentication failed, redirect back to the login page with an error message
+        res.redirect("/adminlogin.html?error=invalidCredentials");
+    }
+});
+
+
+
+
 // Route to handle booking form submission
 app.post("/", encoder, function(req, res){
     var location = req.body['select-location'];
