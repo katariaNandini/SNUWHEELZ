@@ -20,13 +20,18 @@ body {
 }
 
 #role-selection a {
-  display: block;
-  width: 300px;
-  height: 230px;
-  background-color: #78A083;
-  border-radius: 1rem;
-  position: relative;
-}
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 300px;
+    height: 230px;
+    background-color: #78A083;
+    border-radius: 1rem;
+    position: relative;
+    margin: 0 20px; /* Adjust this value to increase or decrease the space between the boxes */
+    border: 2px solid black; /* Add this line */
+  }
+
 
 #role-selection a::before {
   content: attr(href);
@@ -42,4 +47,10 @@ body {
 }
 
 #role-selection a[href="adminlogin.html"]::before {
-  content: "Admin";}
+  content: "Admin";
+}
+
+#role-selection a img {
+  max-width: 100%;
+  max-height: 100%;
+}
