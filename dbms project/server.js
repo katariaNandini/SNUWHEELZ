@@ -25,9 +25,9 @@ app.get("/aboutus.html", function(req, res){
 app.get("/", function(req, res){
     res.sendFile(__dirname + "/admin_user.html");
 });
-app.get("/admin.html", function(req, res){
-    res.sendFile(__dirname + "/admin.html");
-});
+// app.get("/admin.html", function(req, res){
+//     res.sendFile(__dirname + "/admin.html");
+// });
 app.get("/adminlogin.html", function(req, res){
     res.sendFile(__dirname + "/adminlogin.html");
 });
@@ -75,7 +75,44 @@ app.post("/adminlogin", encoder, function(req, res) {
 });
 
 
+app.get('/admin.html', (req, res) => {
+    connection.query('SELECT * FROM cycle_status', (error, results) => {
+      if (error) {
+        throw error;
+      }
+      res.send(`
+        <!DOCTYPE html>
+        <html>
+        <head>
+        <link rel="stylesheet" href="assets/admin_portal.css">
 
+          <title>Cycle Status</title>
+        </head>
+        <body>
+          <h1>Cycle Status</h1>
+          <table border="1">
+            <tr>
+              <th>ID</th>
+              <th>Location</th>
+              <th>Cycles Available</th>
+              <th>Cycles Rented</th>
+              <th>Cycles Maintenance</th>
+            </tr>
+            ${results.map(row => `
+              <tr>
+                <td>${row.id}</td>
+                <td>${row.location_name}</td>
+                <td>${row.cycles_available}</td>
+                <td>${20 - row.cycles_available}</td>
+                <td>${row.cycles_maintenance}</td>
+              </tr>
+            `).join('')}
+          </table>
+        </body>
+        </html>
+      `);
+    });
+  });
 
 // Route to handle booking form submission
 app.post("/", encoder, function(req, res){
