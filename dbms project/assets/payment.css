@@ -1,0 +1,33 @@
+body {
+    background-color: #35374B;
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    color: #35374B;
+  }
+  
+  #qr-code-section {
+    text-align: center;
+  }
+  
+  #qr-code-section img {
+    max-width: 100px; /* Adjust this value to make the image smaller */
+    margin: auto; /* Center the image */
+   
+  }
+  
+  #qr-code-section button {
+    background-color: #78A083;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: block;
+    font-size: 16px;
+    margin: auto;
+    cursor: pointer;
+  }
