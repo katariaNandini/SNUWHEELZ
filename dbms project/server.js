@@ -22,7 +22,7 @@ connection.connect(function(error){
 app.get("/aboutus.html", function(req, res){
     res.sendFile(__dirname + "/aboutus.html");
 });
-app.get("/admin_user.html", function(req, res){
+app.get("/", function(req, res){
     res.sendFile(__dirname + "/admin_user.html");
 });
 app.get("/admin.html", function(req, res){

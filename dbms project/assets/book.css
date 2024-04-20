@@ -282,5 +282,14 @@ label {
   background-color: black;
   color: white;
 }
+#book-button {
+  background-color: green; /* Set the background color to green */
+  color: white; /* Set the text color to white */
+  padding: 10px 20px; /* Add padding to the button */
+  border: none; /* Remove the border */
+  border-radius: 5px; /* Add rounded corners */
+  display: block; /* Change display to block to center the button */
+  margin: 0 auto; /* Set left and right margins to auto to center the button */
+}
 
 /* ... Remaining CSS ... */
