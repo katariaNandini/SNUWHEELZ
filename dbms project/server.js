@@ -18,7 +18,9 @@ connection.connect(function(error){
     if (error) throw error;
     else console.log("Connected to the database successfully!");
 });
-
+app.get("/payment.html", function(req, res){
+    res.sendFile(__dirname + "/payment.html");
+});
 app.get("/aboutus.html", function(req, res){
     res.sendFile(__dirname + "/aboutus.html");
 });
