@@ -1,7 +1,6 @@
 const mysql = require("mysql");
 const express = require("express");
 const bodyParser = require("body-parser");
-const { emit } = require("nodemon");
 const encoder = bodyParser.urlencoded();
 
 const app = express();
@@ -12,7 +11,7 @@ const connection = mysql.createConnection({
     host: "localhost",
     user: "root",
     password: "1234",
-    database: "d_p"
+    database: "dbms_project"
 });
 
 connection.connect(function(error){
@@ -68,32 +67,19 @@ app.post("/", encoder, function(req, res){
     var title = req.body.title;
     var position = req.body.position;
 
-    const selectQuery = "SELECT * FROM bookings WHERE location = ? AND start_datetime = ? AND end_datetime = ? AND userID = ? AND email = ? AND name = ? AND department = ? AND year = ? AND major = ? AND title = ? AND position = ?";
-    const selectValues = [location, start_datetime, end_datetime, userID, email, name, department, year, major, title, position];
+    const insertQuery = "INSERT INTO bookings (bookings.location, start_datetime, end_datetime, userID, email, name, department, year, major, title, position) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+    const insertValues = [location, start_datetime, end_datetime, userID, email, name, department, year, major, title, position];
 
-    connection.query(selectQuery, selectValues, function(error, results, fields){
+    connection.query(insertQuery, insertValues, function(error, results, fields){
         if (error) {
-            console.error("Error querying the database:", error);
+            console.error("Error inserting data into the database:", error);
             res.status(500).send("Error processing the request");
         } else {
-            if (results.length > 0) {
-                res.redirect("/welcome");
-            } else {
-                const insertQuery = "INSERT INTO bookings (location, start_datetime, end_datetime, userID, email, name, department, year, major, title, position) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
-                const insertValues = [location, start_datetime, end_datetime, userID, email, name, department, year, major, title, position];
-
-                connection.query(insertQuery, insertValues, function(error, results, fields){
-                    if (error) {
-                        console.error("Error inserting data into the database:", error);
-                        res.status(500).send("Error processing the request");
-                    } else {
-                        res.redirect("/feedback");
-                    }
-                });
-            }
+            res.redirect("/welcome");
         }
     });
 });
+
 
 // Route to serve the welcome page
 app.get("/welcome", function(req, res){
@@ -141,7 +127,7 @@ app.post("/signup", encoder, function (req, res) {
         }
     });
 });
-
+ 
 // Route to handle feedback form submission
 app.post("/submit_feedback", encoder, function(req, res){
     var user_id = req.body.user_id;
@@ -164,6 +150,11 @@ app.post("/submit_feedback", encoder, function(req, res){
 });
 
 // Set the app port
-app.listen(4000, function(){
-    console.log("Server is running on port 4000");
+const PORT = process.env.PORT || 3000; // Use the port provided by the environment or fallback to 3000
+
+app.listen(PORT, function(){
+    console.log(`Server is running on port ${PORT}`);
 });
+
+
+
