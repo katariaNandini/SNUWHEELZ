@@ -29,20 +29,21 @@ body {
     border-radius: 1rem;
     position: relative;
     margin: 0 20px; /* Adjust this value to increase or decrease the space between the boxes */
-    border: 2px solid black; /* Add this line */
+    border: 5px solid rgb(58, 107, 86); /* Add this line */
   }
 
 
 #role-selection a::before {
   content: attr(href);
   position: absolute;
-  bottom: 0;
+  bottom: -35px;
   left: 50%;
+  font-size: 25px;
   transform: translateX(-50%);
   color: white;
 }
 
-#role-selection a[href="login.html"]::before {
+#role-selection a[href="signup.html"]::before {
   content: "User";
 }
 
