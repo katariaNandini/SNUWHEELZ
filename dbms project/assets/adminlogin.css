@@ -1,37 +1,107 @@
-<!DOCTYPE html>
-<html lang="en">
+html {
+  height: 100%;
+}
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Login</title>
-  <link rel="stylesheet" href="assets/adminlogin.css">
-  <!-- You don't need to defer the script here -->
-  <script src="adminlogin.js"></script>
-</head>
+body {
+  height: 100%;
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    background-color: #35374B;
+}
 
-<body>
-  <main id="main-holder">
-    <div id="adminlogin-section">
-      <h1 id="adminlogin-header">Admin</h1>
-      
-      <!-- You can uncomment the error message section if needed -->
-      <!-- <div id="login-error-msg-holder"> -->
-        <!-- <p id="login-error-msg">Invalid username <span id="error-msg-second-line">and/or password</span></p> -->
-      <!-- </div> -->
-      
-      <!-- Add an action attribute to the form to specify the route -->
-      <form id="adminlogin-form" action="/adminlogin" method="POST">
-        <!-- Add name attributes to the input fields for accessing them in the server-side logic -->
-        <input type="text" name="username" id="username-field" class="login-form-field" placeholder="Username">
-        <input type="password" name="password" id="password-field" class="login-form-field" placeholder="Password">
-        <input type="submit" value="Login" id="login-form-submit">
-      </form>
-    </div>
-    <div id="image-section">
-       <img src="images\adminpage.png">
-  </div>
-  </main>
-</body>
+#main-holder {
+  width: 50%;
+    height: 70%;
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Split the main holder into two columns */
+    justify-items: center;
+    align-items: center;
+    background-color: #78A083;
+    border-radius: 7px;
+    box-shadow: 0px 0px 5px 2px black;
+}
 
-</html>
+#adminlogin-section {
+  grid-column: 1;
+  padding-left: 20px; /* Place the adminlogin section in the first column */
+}
+
+#image-section {
+  grid-column: 2; /* Place the image section in the second column */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px; /* Add some padding to make the image smaller than the box */
+  margin-top: 5px;
+}
+
+#image-section img {
+  max-width: 100%; /* Make the image responsive */
+  max-height: 100%;
+}
+
+
+  
+  #adminlogin-error-msg-holder {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+  }
+  
+  #adminlogin-error-msg {
+    width: 23%;
+    text-align: center;
+    margin: 0;
+    padding: 5px;
+    font-size: 12px;
+    font-weight: bold;
+    color: #50727B;
+    border: 1px solid #50727B;
+    background-color: #78A083;
+    opacity: 0;
+  }
+  
+  #error-msg-second-line {
+    display: block;
+  }
+  
+  #adminlogin-form {
+    align-self: flex-start;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    margin: 20px;
+  }
+  
+  .login-form-field::placeholder {
+    color: #646bb2;
+  }
+  
+  .login-form-field {
+    border: none;
+    border-bottom: 1px solid #303890;
+    margin-bottom: 10px;
+    border-radius: 3px;
+    outline: none;
+    padding: 0px 0px 5px 5px;
+  }
+  
+  #login-form-submit {
+    width: 100%;
+    padding: 7px;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+    background-color: #323ca7;
+    cursor: pointer;
+    outline: none;
+  }
+  h1{
+    margin-left: 1em;
+  }
