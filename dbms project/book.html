@@ -102,10 +102,16 @@
                   </div>
                   <div>
                     <a href="/rent/booknow/pay">
-                        <button id="book-button">Book Your Ride</button>
+                        <button id="bookRideBtn">Book Your Ride</button>
                     </a>                  </div>
               </form>
-              
+              <script>
+  // JavaScript code to handle the click event
+  document.getElementById("bookRideBtn").addEventListener("click", function() {
+    // Redirect the user to the payment page
+    window.location.href = "payment.html";
+  });
+</script>
             
                     </li>
                 </ul>
