@@ -11,7 +11,7 @@ const connection = mysql.createConnection({
     host: "localhost",
     user: "root",
     password: "1234",
-    database: "dbms_project"
+    database: "db_p"
 });
 
 connection.connect(function(error){
@@ -134,12 +134,8 @@ app.post("/", encoder, function(req, res){
     const insertValues = [location, start_datetime, end_datetime, userID, email, name, department, year, major, title, position];
 
     connection.query(insertQuery, insertValues, function(error, results, fields){
-        if (error) {
-            console.error("Error inserting data into the database:", error);
-            res.status(500).send("Error processing the request");
-        } else {
-            res.redirect("/welcome");
-        }
+        
+        res.redirect("/payment.html");
     });
 });
 
